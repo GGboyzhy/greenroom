@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import edu.swjtuhc.demo.model.register;
+import edu.swjtuhc.demo.model.User;
 
-public interface RegisterMapper extends JpaRepository<register,Integer>{
-	public List<register> findByUsername(String username);
+public interface RegisterMapper extends JpaRepository<User,Integer>{
+	public List<User> findByUsername(String username);
 }

@@ -4,24 +4,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity(name="sysuser")
-public class register {
+public class User {
+	@JsonProperty(value = "id,username,userpassword")
 	@Id
     @GeneratedValue
     private Integer id;
     private String username;
     private String userpassword;
 
-    public register(String username, String userpassword) {
+    public User(String username, String userpassword) {
         this.username = username;
         this.userpassword = userpassword;
     }
 
-    public register() {
+    public User() {
     }
-
     
-
     public String getUsername() {
 		return username;
 	}
@@ -45,4 +46,11 @@ public class register {
     public void setId(Integer id) {
         this.id = id;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", userpassword=" + userpassword + "]";
+	}
+
+    
 }

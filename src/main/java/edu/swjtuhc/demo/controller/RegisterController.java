@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.swjtuhc.demo.model.Result;
-import edu.swjtuhc.demo.model.register;
-import edu.swjtuhc.demo.service.LoginAndRegisterService;
+import edu.swjtuhc.demo.model.User;
+import edu.swjtuhc.demo.service.RegisterService;
 
 @RestController
 public class RegisterController {
 
     @Autowired
-    private LoginAndRegisterService loginAndRegisterService;
+    private RegisterService RegisterService;
 
     @PostMapping(value = "/register" )
-    public Result addUser(@RequestBody register newUser){
+    public Result addUser(@RequestBody User newUser){
         Result result = new Result();  
-        register user = loginAndRegisterService.addUser(newUser);
+        User user = RegisterService.addUser(newUser);
         if(user == null){
             //表示注册失败
             result.setResult(false);

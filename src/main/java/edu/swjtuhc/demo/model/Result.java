@@ -1,10 +1,11 @@
 package edu.swjtuhc.demo.model;
 
-public class Result {
+import java.util.List;
+
+public class Result{
     private boolean result = false;
     private String message;
-
-
+   
     public boolean isResult() {
         return result;
     }
@@ -20,4 +21,6 @@ public class Result {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 }
