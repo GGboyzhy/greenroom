@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="edu.swjtuhc.demo.mapper.SearchMapper">
-	<select id="selectArticleByTitle" parameterType="java.lang.String" resultType="edu.swjtuhc.demo.model.Article">
-		select * from article where title=#{title} 
-	</select>
-</mapper>
