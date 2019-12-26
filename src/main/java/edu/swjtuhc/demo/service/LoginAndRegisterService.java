@@ -15,8 +15,6 @@ public class LoginAndRegisterService {
     @Autowired
     private RegisterMapper RegisterMapper;
 
-
-
     public register addUser(@NonNull register newUser){
         List<register> userList = RegisterMapper.findByUsername(newUser.getUsername());
         if(userList == null|| userList.size()==0){
