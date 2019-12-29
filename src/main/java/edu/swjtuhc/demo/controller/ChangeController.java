@@ -12,17 +12,18 @@ import net.sf.json.JSONObject;
 @RestController
 @RequestMapping("/Change")
 public class ChangeController {
-	@Autowired
-	ChangeService changeservice;
 	
-	@RequestMapping("/ChangeName")
-	public JSONObject Change(@RequestBody ChangeModel ChangeName) {
-		System.out.println(ChangeName);
-		JSONObject result = new JSONObject();
-		//service
-		int i = changeservice.ChangeName(ChangeName);
-		System.out.println(ChangeName);
-//		result.put("state", 1);
-		return result;
+	@Autowired
+	ChangeService ChangeService;
+//  修改密码
+@RequestMapping("/ChangePassword")
+public JSONObject Change(@RequestBody ChangeModel changemodel) {
+	System.out.println(changemodel);
+	JSONObject requesMap = new JSONObject();
+	
+	int i = ChangeService.Change(changemodel);
+	System.out.println(changemodel);
+	requesMap.put("state",i);
+	return requesMap;
 	}
 }
